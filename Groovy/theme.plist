@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>kosakgroove</string>
+	<key>Description</key>
+	<string>Groovy</string>
+	<key>Theme</key>
+	<dict>
+		<key>Background</key>
+		<dict>
+			<key>Path</key>
+			<string>background.png</string>
+			<key>Type</key>
+			<string>Tile</string>
+		</dict>
+		<key>Badges</key>
+		<dict>
+			<key>Inline</key>
+			<false/>
+			<key>Show</key>
+			<true/>
+			<key>Swap</key>
+			<true/>
+		</dict>
+		<key>Banner</key>
+		<string>logo.png</string>
+		<key>Components</key>
+		<dict>
+			<key>Banner</key>
+			<true/>
+			<key>Functions</key>
+			<true/>
+			<key>Label</key>
+			<true/>
+			<key>MenuTitle</key>
+			<true/>
+			<key>Revision</key>
+			<false/>
+		</dict>
+		<key>Font</key>
+		<dict>
+			<key>CharWidth</key>
+			<integer>14</integer>
+			<key>Path</key>
+			<string>type2_Monaco_16pt_Cell_14x21_l-2.png</string>
+			<key>Type</key>
+			<string>Load</string>
+			<key>Proportional</key>
+			<true/>
+		</dict>
+		<key>Selection</key>
+		<dict>
+			<key>Big</key>
+			<string>selection_big.png</string>
+			<key>Color</key>
+			<string>0xCC6A01FF</string>
+			<key>Small</key>
+			<string>selection_small.png</string>
+		</dict>
+	</dict>
+	<key>Year</key>
+	<string>2016</string>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>blackosx</string>
+	<key>Year</key>
+	<string>2012</string>
+	<key>Description</key>
+	<string>BGO (black_green original) updated for latest Clover v1.0.</string>
+	<key>Theme</key>
+	<dict>
+		<key>Badges</key>
+		<dict>
+			<key>Show</key>
+			<true/>
+			<key>Inline</key>
+			<false/>
+			<key>Swap</key>
+			<false/>
+			<key>OffsetX</key>
+			<integer>0</integer>
+			<key>OffsetY</key>
+			<integer>0</integer>
+			<key>Scale</key>
+            <integer>16</integer>
+		</dict>
+		<key>Banner</key>
+		<string>logo_v1.png</string>
+		<key>Font</key>
+		<dict>
+			<key>CharWidth</key>
+			<integer>10</integer>
+			<key>Path</key>
+			<string>WoB_PTMono_10W_NA.png</string>
+			<key>Type</key>
+			<string>Load</string>
+		</dict>
+		<key>Selection</key>
+		<dict>
+			<key>Big</key>
+			<string>Selection_144px.png</string>
+			<key>Color</key>
+			<string>0x4E7F18FF</string>
+			<key>Small</key>
+			<string>Selection_64px.png</string>
+			<key>OnTop</key>
+			<false/>
+		</dict>
+	</dict>
+</dict>
+</plist>

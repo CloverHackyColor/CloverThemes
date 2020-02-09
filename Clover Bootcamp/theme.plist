@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Deebo</string>
+	<key>Description</key>
+	<string>ML Camp</string>
+	<key>Theme</key>
+	<dict>
+		<key>Background</key>
+		<dict>
+			<key>Path</key>
+			<string>background.png</string>
+			<key>Type</key>
+			<string>Crop</string>
+		</dict>
+		<key>Badges</key>
+		<dict>
+			<key>Inline</key>
+			<false/>
+			<key>Show</key>
+			<false/>
+			<key>Swap</key>
+			<false/>
+		</dict>
+		<key>Banner</key>
+		<string>logo-trans.png</string>
+		<key>Font</key>
+		<dict>
+			<key>CharWidth</key>
+			<integer>10</integer>
+			<key>Path</key>
+			<string>mpr.png</string>
+			<key>Type</key>
+			<string>Load</string>
+		</dict>
+		<key>Selection</key>
+		<dict>
+			<key>Big</key>
+			<string>Select_trans_big.png</string>
+			<key>Color</key>
+			<string>0xF3F3F380</string>
+			<key>Small</key>
+			<string>Select_trans_small.png</string>
+		</dict>
+	</dict>
+	<key>Year</key>
+	<string>2013</string>
+</dict>
+</plist>

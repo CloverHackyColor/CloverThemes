@@ -38,7 +38,7 @@
 				<key>Path</key>
 				<string>red_logo</string>
 				<key>Frames</key>
-				<integer>13</integer>
+				<integer>14</integer>
 				<key>FrameTime</key>
 				<integer>200</integer>
 			</dict>

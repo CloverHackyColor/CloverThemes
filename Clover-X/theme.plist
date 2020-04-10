@@ -2,12 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Author</key>
-	<string>chris1111</string>
-	<key>Description</key>
-	<string>Clover-X</string>
+	<key>Author</key>	<string>chris1111</string>	<key>Description</key>	<string>Clover-X</string>
 	<key>Theme</key>
 	<dict>
+		<key>Anime</key>
+		<array>
+			<dict>
+				<key>ID</key>
+				<integer>1</integer>
+				<key>Path</key>
+				<string>X_LOGO</string>
+				<key>Frames</key>
+				<integer>41</integer>
+				<key>FrameTime</key>
+				<integer>60</integer>
+			</dict>
+			<key>CharWidth</key>
+			<integer>10</integer>
+			<key>Path</key>
+			<string>font.png</string>
+			<key>Type</key>
+			<string>Load</string>
+		</array>
 		<key>Background</key>
 		<dict>
 			<key>Path</key>
@@ -23,32 +39,23 @@
 			<true/>
 			<key>Swap</key>
 			<true/>
-			<key>Scale</key>
-			<integer>5</integer>
 		</dict>
-		<key>Banner</key>
-		<string>Logo.png</string>
+                <key>Banner</key>
+		<string>logo.png</string>
 		<key>Font</key>
-		<dict/>
-		<key>Anime</key>
-		<array>
-			<dict>
-				<key>ID</key>
-				<integer>1</integer>
-				<key>Path</key>
-				<string>X_LOGO</string>
-				<key>Frames</key>
-				<integer>41</integer>
-				<key>FrameTime</key>
-				<integer>60</integer>
-			</dict>
+		<dict>
+			<key>CharWidth</key>
 			<integer>10</integer>
+			<key>Path</key>
 			<string>font.png</string>
+			<key>Proportional</key>
+			<true/>
+			<key>Type</key>
 			<string>Load</string>
-		</array>
+		</dict>
 		<key>Selection</key>
 		<dict>
-			<key>Big</key>
+                      	<key>Big</key>
 			<string>selection_big.png</string>
 			<key>Color</key>
 			<string>0xFFFFFF7F</string>
@@ -60,3 +67,5 @@
 	<string>2017</string>
 </dict>
 </plist>
+              	
+			

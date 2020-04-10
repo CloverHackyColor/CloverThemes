@@ -11,22 +11,25 @@
 		<key>Anime</key>
 		<array>
 			<dict>
-				<key>FrameTime</key>
-				<integer>200</integer>
-				<key>Frames</key>
-				<integer>9</integer>
 				<key>ID</key>
 				<integer>1</integer>
 				<key>Path</key>
 				<string>Space_logo</string>
+				<key>Frames</key>
+				<integer>9</integer>
+				<key>FrameTime</key>
+				<integer>200</integer>
 			</dict>
+			<integer>10</integer>
+			<string>font.png</string>
+			<string>Load</string>
 		</array>
 		<key>Background</key>
 		<dict>
 			<key>Path</key>
 			<string>background-1920x1080.png</string>
 			<key>Type</key>
-			<string>Scale</string>
+			<string>Tile</string>
 		</dict>
 		<key>Badges</key>
 		<dict>
@@ -35,16 +38,16 @@
 			<key>Show</key>
 			<true/>
 			<key>Swap</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Banner</key>
 		<string>logo.png</string>
 		<key>Font</key>
 		<dict>
 			<key>CharWidth</key>
-			<integer>9</integer>
+			<integer>10</integer>
 			<key>Path</key>
-			<string>WoB_Hellfire_Bold_9W.png</string>
+			<string>font.png</string>
 			<key>Proportional</key>
 			<true/>
 			<key>Type</key>
@@ -55,7 +58,7 @@
 			<key>Big</key>
 			<string>SelectBig.png</string>
 			<key>Color</key>
-			<string>0xFFFFFF8F</string>
+			<string>0xFFFFFF7F</string>
 			<key>Small</key>
 			<string>SelectSmall.png</string>
 		</dict>

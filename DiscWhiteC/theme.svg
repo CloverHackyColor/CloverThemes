@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1"
-  id="CloverTheme(CloverSvgThemeBuilder 0.4.4 / [Template 1.1.8])"
+  id="CloverTheme(CloverSvgThemeBuilder 0.4.6 / [Template 1.1.9])"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:clover="https://github.com/CloverHackyColor/CloverBootloader"
@@ -25,23 +25,29 @@
   SelectionOnTop="1"
   AnimeFrames=""
   FrameTime=""
-  Version="0.6"
+  Version="0.7"
   Year="2020"
   Author="Blackosx"
-  Description="A vector theme (Symbol Version)"
+  Description="A light vector theme with colour badges (Symbol Version)"
 />
 <style type="text/css">
   .NoFill{fill:none;}
   .DisplayInline{display:inline;}
   .DisplayNone{display:none;}
-  .MenuContainerBorder{fill:none;stroke:#FFFFFF;stroke-opacity:0.328;}
   .MenuSelectionBoundingBox{fill:#FBFBFB;fill-opacity:0.3298;}
   .MenuSelectionBoundingBoxNight{fill:#0B1D37;fill-opacity:FF;}
-  .FontColour{fill:#888888;}
-  .FontName{font-family:PTMono-Regular;}
-  .FontSizeMenu{font-size:13px;}
-  .FontSizeMenuTitle{font-size:15px;}
-  .FontSizeMessageRow{font-size:20px;}
+  /* Menu Titles, Boot Text and Main Screen text */
+  .TextStyle_MenuTitlesAndBootText_FontColour{fill:#888888;}
+  .TextStyle_MenuTitlesAndBootText_FontName{font-family:PTMono-Regular;}
+  .TextStyle_MenuTitlesAndBootText_FontSize{font-size:20;}
+  /* Menu */
+  .TextStyle_OptionMenusRowText_FontColour{fill:#555555;}
+  .TextStyle_OptionMenusRowText_FontName{font-family:PTMono-Regular;}
+  .TextStyle_OptionMenusRowText_FontSize{font-size:13px;}
+  /* Help Menu */
+  .TextStyle_HelpAboutMenuRowText_FontColour{fill:#555555;}
+  .TextStyle_HelpAboutMenuRowText_FontName{font-family:PTMono-Regular;}
+  .TextStyle_HelpAboutMenuRowText_FontSize{font-size:13;}
 </style>
 <metadata> Created by FontForge 20181014 at Wed Feb  8 08:37:02 2012 By convertio Copyright (c) 2010 ParaType Inc., ParaType Ltd. All rights reserved. </metadata>
 <defs>
@@ -3751,6 +3757,7 @@
 	</g>
 </symbol>
 <symbol  id="ImageMacOSMountainLion" viewBox="-55.6 -54.5 111.3 108.9">
+	<polygon style="fill:#FFFFFF;" points="-2.1,-21.6 -0.5,-26.2 23.2,-35.7 26.7,-31.3 29.2,-18.6 38.2,-15.6 44.6,-5.6 38.7,-3 	"/>
 	<path style="fill:#CDBF9D;" d="M-24-18c1.1,1.7,10-3.4,17.7-9.9C-14.4-40.3-34.7-24.7-24-18z"/>
 	<path style="fill:#CDBF9D;" d="M-34.8,34.4c-0.3-2.3-0.5-12.5-0.5-12.5c1.4-0.2,8.1-1.7,10.2-0.5c2.1,1.1,12.3,10.3,7.2,12
 		C-22.9,35-34.8,34.4-34.8,34.4z"/>
@@ -3969,8 +3976,7 @@
 		c-1.2-1.4-11-13.5-8.8-12.8c3.9,0.5,7.8,1.3,11.5,2.5c0.1,0.1,0.2,0.1,0.2,0.2c0,1.3,1.8,12,1.8,12.1c0.2,1.6,1.1,4.1,0.5,5.6
 		c-1.3,3.1-5.9,4-7.7,6.6c-1.9,2.7,3.2,8.7,6.6,5c0.7-0.7-1.2-3.4-1.3-4.3c-0.2-1.9,0.1-0.5,1.1-1.6c0.7-0.8,0.1-2,0.8-3
 		c0.6-0.8,1.9-1.5,2.9-1.3c1.4,0.3,1.7,1.7,2.1,2.9C27.7-28.6,25.9-29.6,25-29.1z M1.3-22.8c0.7-0.6,0.1-1,0.9-1.7
-		c0.2-0.2,1-0.5,1.6-0.7c0.2-0.1,0.2-0.4-0.1-0.5c-1.3-0.2-2.4-0.5-3.2,0.9C-0.2-23.9-0.2-21.6,1.3-22.8z M13.7-39.5
-		c-2.8,1.4,2.7,4.4,4.5,3.1C18.6-36.8,14.1-39.8,13.7-39.5z"/>
+		c0.2-0.2,1-0.5,1.6-0.7c0.2-0.1,0.2-0.4-0.1-0.5c-1.3-0.2-2.4-0.5-3.2,0.9C-0.2-23.9-0.2-21.6,1.3-22.8z"/>
 	<path style="fill:#C1AD91;" d="M-2.6-50c-0.5-1.3-1-2.7-1.5-4c0.6-0.1,1.2-0.1,1.8-0.2C-1.8-52.7-2.2-51.6-2.6-50z"/>
 	<path style="fill:#C1AD91;" d="M-1-53.7c-0.3-0.2-0.7-0.3-1-0.5C-0.7-54.3-1-54.6-1-53.7z"/>
 	<path style="fill:#E3DCC0;" d="M0.9-54.4c-0.1,0.5-0.2,1-0.3,1.5c-0.6,0.7-2.1,3.1-3.2,2.9c0.4-1.5,0.9-2.7,0.3-4.2
@@ -6425,40 +6431,17 @@
 
 <g id="MenuScreen" transform="scale(1) translate(0.000000, 280.000000)" class="DisplayNone">
   <g id="MenuContainer" transform="translate(330.000000, 88.000000)" class="DisplayInline">
-    <rect id="ContainerBorder" x="0.5" y="0.5" class="MenuContainerBorder" width="551" height="358"/>
-    <g id="MenuSelection" transform="translate(1.000000, 0.000000)">
-      <rect id="BoundingBox" y="0" class="MenuSelectionBoundingBox" width="551" height="25"/>
-    </g>
     <g id="MenuRows" transform="translate(29.000000, 0.000000)">
-      <text transform="matrix(1 0 0 1 0 17)" class="FontColour FontName FontSizeMenu">Boot Aguments: </text>
-      <text transform="matrix(1 0 0 1 0 41)" class="FontColour FontName FontSizeMenu">Confgs ...</text>
-      <text transform="matrix(1 0 0 1 0 65)" class="FontColour FontName FontSizeMenu">GUI tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 89)" class="FontColour FontName FontSizeMenu">ACPI patching ...</text>
-      <text transform="matrix(1 0 0 1 0 113)" class="FontColour FontName FontSizeMenu">SMBIOS ...</text>
-      <text transform="matrix(1 0 0 1 0 137)" class="FontColour FontName FontSizeMenu">PCI devices ...</text>
-      <text transform="matrix(1 0 0 1 0 161)" class="FontColour FontName FontSizeMenu">CPU tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 185)" class="FontColour FontName FontSizeMenu">Graphics Injector ...</text>
-      <text transform="matrix(1 0 0 1 0 209)" class="FontColour FontName FontSizeMenu">Audio tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 233)" class="FontColour FontName FontSizeMenu">Binaries patching ...</text>
-      <text transform="matrix(1 0 0 1 0 257)" class="FontColour FontName FontSizeMenu">System parameters ...</text>
-      <text transform="matrix(1 0 0 1 0 281)" class="FontColour FontName FontSizeMenu">Return</text>
+      <text transform="matrix(1 0 0 1 0 17)" class="TextStyle_OptionMenusRowText_FontColour TextStyle_OptionMenusRowText_FontName TextStyle_OptionMenusRowText_FontSize">Boot Args: </text>
     </g>
-    <g id="MenuSelectionNight" transform="translate(1.000000, 0.000000)">
-      <rect id="BoundingBox" y="0" class="MenuSelectionBoundingBox" width="551" height="25"/>
+    <g id="HelpRows" transform="translate(29.000000, 0.000000)">
+      <text transform="matrix(1 0 0 1 0 17)" class="TextStyle_HelpAboutMenuRowText_FontColour TextStyle_HelpAboutMenuRowText_FontName TextStyle_HelpAboutMenuRowText_FontSize">ESC - Escape from submenu, Refresh main menu</text>
     </g>
     <g id="MenuRows_night" transform="translate(29.000000, 0.000000)">
-      <text transform="matrix(1 0 0 1 0 17)" class="FontColourNight FontName FontSizeMenu">Boot Aguments: </text>
-      <text transform="matrix(1 0 0 1 0 41)" class="FontColourNight FontName FontSizeMenu">Confgs ...</text>
-      <text transform="matrix(1 0 0 1 0 65)" class="FontColourNight FontName FontSizeMenu">GUI tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 89)" class="FontColourNight FontName FontSizeMenu">ACPI patching ...</text>
-      <text transform="matrix(1 0 0 1 0 113)" class="FontColourNight FontName FontSizeMenu">SMBIOS ...</text>
-      <text transform="matrix(1 0 0 1 0 137)" class="FontColourNight FontName FontSizeMenu">PCI devices ...</text>
-      <text transform="matrix(1 0 0 1 0 161)" class="FontColourNight FontName FontSizeMenu">CPU tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 185)" class="FontColourNight FontName FontSizeMenu">Graphics Injector ...</text>
-      <text transform="matrix(1 0 0 1 0 209)" class="FontColourNight FontName FontSizeMenu">Audio tuning ...</text>
-      <text transform="matrix(1 0 0 1 0 233)" class="FontColourNight FontName FontSizeMenu">Binaries patching ...</text>
-      <text transform="matrix(1 0 0 1 0 257)" class="FontColourNight FontName FontSizeMenu">System parameters ...</text>
-      <text transform="matrix(1 0 0 1 0 281)" class="FontColourNight FontName FontSizeMenu">Return</text>
+      <text transform="matrix(1 0 0 1 0 17)" class="TextStyle_OptionMenusRowText_FontColourNight TextStyle_OptionMenusRowText_FontNameNight TextStyle_OptionMenusRowText_FontSizeNight">Boot Args: </text>
+    </g>
+    <g id="HelpRows_night" transform="translate(29.000000, 0.000000)">
+      <text transform="matrix(1 0 0 1 0 17)" class="TextStyle_HelpAboutMenuRowText_FontColourNight TextStyle_HelpAboutMenuRowText_FontNameNight TextStyle_HelpAboutMenuRowText_FontSizeNight">ESC - Escape from submenu, Refresh main menu</text>
     </g>
 </g>
 
@@ -6502,11 +6485,6 @@
 
     </g>
 </g>
-  <g id="MenuTitle" transform="translate(0.000000, 50.000000)" class="DisplayInline">
-    <g>
-      <text id="TitleText_7_" transform="matrix(1 0 0 1 569.2043 21)" class="FontColour FontName FontSize">Options</text>
-    </g>
-  </g>
   <g id="MenuIcon" transform="translate(576.000000, 0.000000)" class="DisplayInline">
     <rect visibility="hidden" id="BoundingRect_5_" y="0" class="NoFill" width="48" height="48"/>
 <!-- INSERT ICON -->
@@ -6638,12 +6616,12 @@
 
   <g id="MessageRow" class="DisplayBlock" transform="scale(1) translate(0.000000, 580.000000)">
     <g>
-      <text id="MessageRowText_7_" transform="matrix(1 0 0 1 600 25)" class="FontColour FontName FontSizeMessageRow">Boot Windows</text>
+      <text id="MessageRowText" transform="matrix(1 0 0 1 600 25)" class="TextStyle_MenuTitlesAndBootText_FontColour TextStyle_MenuTitlesAndBootText_FontName TextStyle_MenuTitlesAndBootText_FontSize">Boot Windows</text>
     </g>
   </g>
   <g id="MessageRow_night" class="DisplayNone" transform="scale(1) translate(0.000000, 580.000000)">
     <g>
-      <text id="MessageRowText_7_" transform="matrix(1 0 0 1 600 25)" class="FontColourNight FontNameNight FontSizeMessageRow">Boot Windows</text>
+      <text id="MessageRowText" transform="matrix(1 0 0 1 600 25)" class="TextStyle_MenuTitlesAndBootText_FontColourNight TextStyle_MenuTitlesAndBootText_FontNameNight TextStyle_MenuTitlesAndBootText_FontSizeNight">Boot Windows</text>
     </g>
   </g>
 
@@ -6954,7 +6932,7 @@
   <g id="Banner" class="">
     <rect visibility="hidden" id="BoundingRect_44_" y="0" class="NoFill" width="231.7" height="69.2"/>
     <g id="icon_27_Banner" transform="translate(0, 0)">
-<g id="Layer_2[6]"></g><path style="fill:#888888;" d="M45.8,16.2c11,0,9.8,7.3,6.2,7.3c-1.7,0-2.8-1.4-6.2-1.4c-10.1,0-10.4,18.2,0,18.2	c3.4,0,4.8-1.7,6.5-1.7c3.8,0,5.1,7.6-6.5,7.6C27.2,46.1,27.2,16.2,45.8,16.2z"/><path style="fill:#888888;" d="M60.6,19.6c0-4.3,6.1-4.3,6.1,0V40H74c3.9,0,3.8,5.6,0,5.6H63.8c-2,0-3.2-1.3-3.2-3.3V19.6z"/><path style="fill:#888888;" d="M131.4,20.9c-1.5-4,3.7-6.3,5.6-2.4l6.3,16.9l6.3-16.9c1.9-3.9,7.2-1.6,5.6,2.4l-8.9,22.7	c-0.5,1.3-1.2,2.4-3,2.4c-1.8,0-2.5-1.1-3-2.4L131.4,20.9z"/><path style="fill:#888888;" d="M158.8,20.2c0-2,1-3.5,3.2-3.5h10.1c3.9,0,3.8,5.6,0,5.6h-7.2v5.9h6.7c4,0,3.9,5.6,0,5.6h-6.7V40h7.5	c3.9,0,3.8,5.6,0,5.6h-10.5c-1.8,0-3.1-1.2-3.1-3.1V20.2z"/><path style="fill:#888888;" d="M179.2,19.9c0-2,1.1-3.2,3.1-3.2c7.8,0,17.3-1.3,17.3,9.2c0,4.5-3.4,7-7.5,7.7c7.3,7.9,7.7,8,7.7,9.2	c0,3-3.7,4.1-5.4,2.1c-9.6-11.4-8.8-10.9-9.1-10.9v8.8c0,4.3-6.1,4.3-6.1,0V19.9z M185.3,29.5h4.2c2.2,0,3.8-1.3,3.8-3.6	c0-4.2-4-3.6-8-3.6V29.5z"/><path style="fill:#888888;" d="M103.3,29.4h0.7c0-5,0-8.7,0-13.7c0-3.6,3.7-7,7.1-7c4.4,0,6.5,2.4,6.4,6.8c2.6-0.2,7.1,2.9,7.1,6.7	c0,3.7-3.9,7.5-8.2,7.5c-1.1,0-12,0-12,0c0,0.1,0,1.9,0,1.8c11.3,0,10.8,0,12,0c4.4,0,8.2,3.9,8.2,7.5c0,3.7-4.5,6.8-7.1,6.7	c0.1,4.4-2.1,6.8-6.4,6.8c-3.4,0-7.1-3.5-7.1-7c0-4.6,0-8.6,0-13.8c-0.1,0-1.6,0-1.5,0c0,5.1,0,9.1,0,13.8c0,3.6-3.7,7-7,7	c-4.4,0-6.5-2.4-6.4-6.8C86.5,45.8,82,42.7,82,39c0-3.7,3.9-7.5,8.2-7.5c1.8,0,1.2,0,11.9,0c0-0.6,0-1.2,0-1.8c0,0-10.8,0-11.9,0	c-4.3,0-8.2-3.9-8.2-7.5c0-3.7,4.5-6.8,7.1-6.7c-0.1-4.4,2.1-6.8,6.4-6.8c3.4,0,7,3.5,7,7c0,5,0,8.7,0,13.7H103.3"/><path style="fill:#888888;" d="M102.2,60.6c1.9,0,3.1-2.8,3.9-6.1c0.8-3.2,0.9-3.7,0.7-5.1c0,0.3-1.3-1.3-1.3-1.3	c0.2,1.7-1,8.1-3.3,9.5C99.8,59.2,100.9,60.6,102.2,60.6z"/>
+<g id="Layer_2[6]"></g><path style="fill:#E4E4E4;" d="M45.8,16.2c11,0,9.8,7.3,6.2,7.3c-1.7,0-2.8-1.4-6.2-1.4c-10.1,0-10.4,18.2,0,18.2	c3.4,0,4.8-1.7,6.5-1.7c3.8,0,5.1,7.6-6.5,7.6C27.2,46.1,27.2,16.2,45.8,16.2z"/><path style="fill:#E4E4E4;" d="M60.6,19.6c0-4.3,6.1-4.3,6.1,0V40H74c3.9,0,3.8,5.6,0,5.6H63.8c-2,0-3.2-1.3-3.2-3.3V19.6z"/><path style="fill:#E4E4E4;" d="M131.4,20.9c-1.5-4,3.7-6.3,5.6-2.4l6.3,16.9l6.3-16.9c1.9-3.9,7.2-1.6,5.6,2.4l-8.9,22.7	c-0.5,1.3-1.2,2.4-3,2.4c-1.8,0-2.5-1.1-3-2.4L131.4,20.9z"/><path style="fill:#E4E4E4;" d="M158.8,20.2c0-2,1-3.5,3.2-3.5h10.1c3.9,0,3.8,5.6,0,5.6h-7.2v5.9h6.7c4,0,3.9,5.6,0,5.6h-6.7V40h7.5	c3.9,0,3.8,5.6,0,5.6h-10.5c-1.8,0-3.1-1.2-3.1-3.1V20.2z"/><path style="fill:#E4E4E4;" d="M179.2,19.9c0-2,1.1-3.2,3.1-3.2c7.8,0,17.3-1.3,17.3,9.2c0,4.5-3.4,7-7.5,7.7c7.3,7.9,7.7,8,7.7,9.2	c0,3-3.7,4.1-5.4,2.1c-9.6-11.4-8.8-10.9-9.1-10.9v8.8c0,4.3-6.1,4.3-6.1,0V19.9z M185.3,29.5h4.2c2.2,0,3.8-1.3,3.8-3.6	c0-4.2-4-3.6-8-3.6V29.5z"/><path style="fill:#E4E4E4;" d="M103.3,29.4h0.7c0-5,0-8.7,0-13.7c0-3.6,3.7-7,7.1-7c4.4,0,6.5,2.4,6.4,6.8c2.6-0.2,7.1,2.9,7.1,6.7	c0,3.7-3.9,7.5-8.2,7.5c-1.1,0-12,0-12,0c0,0.1,0,1.9,0,1.8c11.3,0,10.8,0,12,0c4.4,0,8.2,3.9,8.2,7.5c0,3.7-4.5,6.8-7.1,6.7	c0.1,4.4-2.1,6.8-6.4,6.8c-3.4,0-7.1-3.5-7.1-7c0-4.6,0-8.6,0-13.8c-0.1,0-1.6,0-1.5,0c0,5.1,0,9.1,0,13.8c0,3.6-3.7,7-7,7	c-4.4,0-6.5-2.4-6.4-6.8C86.5,45.8,82,42.7,82,39c0-3.7,3.9-7.5,8.2-7.5c1.8,0,1.2,0,11.9,0c0-0.6,0-1.2,0-1.8c0,0-10.8,0-11.9,0	c-4.3,0-8.2-3.9-8.2-7.5c0-3.7,4.5-6.8,7.1-6.7c-0.1-4.4,2.1-6.8,6.4-6.8c3.4,0,7,3.5,7,7c0,5,0,8.7,0,13.7H103.3"/><path style="fill:#E4E4E4;" d="M102.2,60.6c1.9,0,3.1-2.8,3.9-6.1c0.8-3.2,0.9-3.7,0.7-5.1c0,0.3-1.3-1.3-1.3-1.3	c0.2,1.7-1,8.1-3.3,9.5C99.8,59.2,100.9,60.6,102.2,60.6z"/>
     </g>
   </g>
   <g id="pointer" transform="translate(79.000000, 263.000000)">

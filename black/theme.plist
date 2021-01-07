@@ -2,35 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Author</key>	<string>chris1111</string>	<key>Description</key>	<string>black</string>
+	<key>Author</key>
+	<string>chris1111</string>
+	<key>Description</key>
+	<string>black adapt for OC Integration</string>
 	<key>Theme</key>
 	<dict>
 		<key>Anime</key>
 		<array>
 			<dict>
+				<key>FrameTime</key>
+				<integer>150</integer>
+				<key>Frames</key>
+				<integer>36</integer>
 				<key>ID</key>
 				<integer>1</integer>
 				<key>Path</key>
 				<string>black_logo</string>
-				<key>Frames</key>
-				<integer>36</integer>
-				<key>FrameTime</key>
-				<integer>150</integer>
 			</dict>
-			<key>CharWidth</key>
-			<integer>10</integer>
-			<key>Path</key>
-			<string>font.png</string>
-			<key>Type</key>
-			<string>Load</string>
 		</array>
-		<key>Background</key>
-		<dict>
-			<key>Path</key>
-			<string>background.png</string>
-			<key>Type</key>
-			<string>Tile</string>
-		</dict>
 		<key>Badges</key>
 		<dict>
 			<key>Inline</key>
@@ -55,7 +45,7 @@
 		</dict>
 		<key>Selection</key>
 		<dict>
-                      	<key>Big</key>
+			<key>Big</key>
 			<string>selection_big.png</string>
 			<key>Color</key>
 			<string>0xFFFFFF7F</string>
@@ -64,8 +54,6 @@
 		</dict>
 	</dict>
 	<key>Year</key>
-	<string>2014</string>
+	<string>2014, 2020</string>
 </dict>
 </plist>
-              	
-			

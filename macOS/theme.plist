@@ -28,9 +28,9 @@
 			<key>Swap</key>
 			<true/>
 			<key>OffsetX</key>
-    		<integer>0</integer>
-    		<key>OffsetY</key>
-    		<integer>0</integer>
+			<integer>0</integer>
+			<key>OffsetY</key>
+			<integer>0</integer>
 		</dict>
 		<key>Banner</key>
 		<string>logo.png</string>

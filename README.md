@@ -26,8 +26,14 @@ Collection of themes for Clover Bootloader|
 - BGM
 <img width="600" alt="1" src="https://user-images.githubusercontent.com/6248794/163812948-cdcee883-ca91-40e0-8e23-e45e4f061891.png">
 
+- Pixewall
+<img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Pixwall/screenshot.png">
+
 - Catalina
 <img width="600" alt="1" src="https://user-images.githubusercontent.com/6248794/163816582-218c0d9e-253b-4ad3-83f7-f89b1554c036.png ">
+
+
+
 
 
 

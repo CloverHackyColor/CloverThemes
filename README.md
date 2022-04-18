@@ -14,7 +14,7 @@ Collection of themes for Clover Bootloader|
 ## Some examples of themes ⬇︎
 
 - cesium
-<img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/cesium/theme.svg">
+<img width="600" alt="1" src="https://user-images.githubusercontent.com/6248794/163851959-35c85d14-9eeb-497f-815f-8fe61d4a7014.gif">
 
 - macOS12
 <img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/macOS12/screenshot.png">

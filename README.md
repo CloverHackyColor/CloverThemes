@@ -5,7 +5,7 @@ CloverThemes
 :----
 Collection of themes for Clover Bootloader|
 
-### How to create are own Theme
+### How to contribute and create are own Theme
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
 
 ## Some examples of themes ⬇︎

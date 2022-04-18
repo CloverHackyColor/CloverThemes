@@ -8,6 +8,10 @@ Collection of themes for Clover Bootloader|
 ### How to contribute and create are own Theme
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
 
+### Download single Theme from link
+- Download single theme ➤ [DownGit](https://minhaskamal.github.io/DownGit/#/home)
+
+
 ## Some examples of themes ⬇︎
 
 - cesium

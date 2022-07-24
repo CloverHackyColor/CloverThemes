@@ -32,7 +32,8 @@ Collection of themes for Clover Bootloader|
 <img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Catalina/screenshot.png">
 
 ## See how to download single theme ⬇︎
-https://user-images.githubusercontent.com/6248794/163840940-27f2c45d-b51b-47e0-8e5f-f6589c5a6c1d.mov
+
+https://user-images.githubusercontent.com/6248794/180648348-842f8478-6fe4-45b1-ba0a-8f64e6d896c5.mov
 
 
 

@@ -8,8 +8,18 @@ Collection of themes for Clover Bootloader|
 ### How to contribute and create are own Theme
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
 
-### Download single Theme from link
+### How to Download single Theme from link
 - Download single theme ➤ [DownGit](https://minhaskamal.github.io/DownGit/#/home)
+
+### How to Download single Theme from Command Line
+- Make sure you have Git Installed 
+- Use the command bellow to install github-files-fetcher
+#### Command github-files-fetcher
+```bash
+sudo npm install -g github-files-fetcher
+```
+- Download Fletch-Clover-Themes ➤ [Fletch-Clover-Themes](https://github.com/CloverHackyColor/CloverThemes/raw/master/Fletch-Clover-Themes.zip) And follow the video at the bottom of the topic
+
 
 ## Some examples of themes ⬇︎
 
@@ -31,9 +41,13 @@ Collection of themes for Clover Bootloader|
 - Catalina
 <img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Catalina/screenshot.png">
 
-## See how to download single theme ⬇︎
+## See how to download single theme from Link ⬇︎
 
 https://user-images.githubusercontent.com/6248794/180648348-842f8478-6fe4-45b1-ba0a-8f64e6d896c5.mov
+
+## See how to Download single Theme from Command Line ⬇︎
+
+https://user-images.githubusercontent.com/6248794/180650360-42ac5883-e830-45d9-bc04-5f3523d8683d.mov
 
 
 

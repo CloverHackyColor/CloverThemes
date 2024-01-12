@@ -9,7 +9,7 @@ Collection of themes for Clover Bootloader|
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
 
 ### How to Download single Theme from link
-- Download single theme ➤ [DownGit](https://minhaskamal.github.io/DownGit/#/home)
+- Download single theme ➤ [DownGit](https://chris1111.github.io/DownGit/#/home)
 
 ### How to Download single Theme from Command Line
 - Make sure you have Git Installed 

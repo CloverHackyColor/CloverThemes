@@ -20,12 +20,6 @@
 				<key>FrameTime</key>
 				<integer>80</integer>
 			</dict>
-			<key>CharWidth</key>
-			<integer>10</integer>
-			<key>Path</key>
-			<string>font.png</string>
-			<key>Type</key>
-			<string>Load</string>
 		</array>
 		<key>Background</key>
 		<dict>
@@ -58,7 +52,7 @@
 		</dict>
 		<key>Selection</key>
 		<dict>
-            <key>Big</key>
+			<key>Big</key>
 			<string>selection_big.png</string>
 			<key>Color</key>
 			<string>0xFFFFFF7F</string>
@@ -70,5 +64,3 @@
 	<string>2023</string>
 </dict>
 </plist>
-              	
-			

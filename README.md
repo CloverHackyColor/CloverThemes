@@ -35,8 +35,9 @@ sudo npm install -g github-files-fetcher
 - BGM
 <img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/BGM/screenshot.png">
 
-- Pixwall
-<img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Pixwall/screenshot.png">
+- Atomic
+<img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Atomic/screenshot.png">
+
 
 - Catalina
 <img width="600" alt="1" src="https://github.com/CloverHackyColor/CloverThemes/blob/master/Catalina/screenshot.png">

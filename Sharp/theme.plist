@@ -2,7 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Author</key>	<string>chris1111, Credit: And Inspired by winlog</string>	<key>Description</key>	<string>Sharp</string>
+	<key>Author</key>	
+	<string>chris1111, Credit: And Inspired by winlog</string>	
+	<key>Description</key>
+	<string>Sharp</string>
 	<key>Theme</key>
 	<dict>
 		<key>Anime</key>

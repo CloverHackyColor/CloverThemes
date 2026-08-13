@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clover Themes Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg-2: #111726;
+  --card: #161d2e;
+  --card-2: #1c2438;
+  --border: rgba(255,255,255,0.08);
+  --border-hi: rgba(255,255,255,0.18);
+  --fg: #e8edf7;
+  --fg-dim: #9aa4be;
+  --fg-mute: #6b7693;
+  --accent: #5e9eff;
+  --accent-2: #a06bff;
+  --accent-3: #ff6b9d;
+  --grad: linear-gradient(135deg, #5e9eff 0%, #a06bff 50%, #ff6b9d 100%);
+  --shadow: 0 10px 40px rgba(0,0,0,0.4);
+  --radius: 16px;
+  --warn-bg: rgba(251, 191, 36, 0.1);
+  --warn-border: rgba(251, 191, 36, 0.3);
+  --warn-text: #fcd34d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient background */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  animation: float 20s ease-in-out infinite;
+}
+.blob.b1 { width: 600px; height: 600px; background: #5e9eff; top: -200px; left: -150px; }
+.blob.b2 { width: 500px; height: 500px; background: #a06bff; top: 30%; right: -150px; animation-delay: -5s; }
+.blob.b3 { width: 450px; height: 450px; background: #ff6b9d; bottom: -150px; left: 30%; animation-delay: -10s; }
+
+@keyframes float {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(40px,-30px) scale(1.1); }
+  66% { transform: translate(-30px,30px) scale(0.95); }
+}
+
+/* Grid overlay */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 14, 26, 0.75);
+  border-bottom: 1px solid var(--border);
+  transition: all .3s;
+}
+.nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--grad);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(94,158,255,0.4);
+}
+.logo span { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Custom Anime Clover Logo */
+.anime-logo {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  flex-shrink: 0;
+  animation: vibrate 0.3s infinite;
+  transform-origin: center;
+}
+.anime-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  /* Neon Green Glow */
+  filter: drop-shadow(0 0 6px rgba(52, 211, 153, 0.9)) drop-shadow(0 0 14px rgba(52, 211, 153, 0.5));
+}
+.anime-logo:hover {
+  animation: vibrate 0.1s infinite;
+}
+
+@keyframes vibrate {
+  0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+  10% { transform: translate(-0.5px, -1px) rotate(-1deg); }
+  20% { transform: translate(-1px, 0.5px) rotate(1deg); }
+  30% { transform: translate(1px, 0.5px) rotate(0deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(1deg); }
+  50% { transform: translate(-0.5px, 0.5px) rotate(-1deg); }
+  60% { transform: translate(-1px, -0.5px) rotate(0deg); }
+  70% { transform: translate(1px, 1px) rotate(-1deg); }
+  80% { transform: translate(-0.5px, -0.5px) rotate(1deg); }
+  90% { transform: translate(0.5px, 1px) rotate(0deg); }
+  100% { transform: translate(0.5px, -1px) rotate(-1deg); }
+}
+
+.nav-links { display: flex; gap: 8px; align-items: center; }
+.nav-links a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all .2s;
+  cursor: pointer;
+}
+.nav-links a:hover { color: var(--fg); background: rgba(255,255,255,0.05); }
+
+.nav-cta {
+  padding: 9px 18px;
+  background: var(--grad);
+  color: white !important;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(94,158,255,0.3);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Hero */
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 32px 50px;
+  text-align: center;
+  position: relative;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(94,158,255,0.1);
+  border: 1px solid rgba(94,158,255,0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 24px;
+  animation: fadeUp .6s ease;
+}
+.badge .dot {
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Title Reduced in Size */
+.hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  animation: fadeUp .7s ease .1s backwards;
+}
+.hero h1 .gradient {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shine 8s ease infinite;
+}
+@keyframes shine {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.hero p {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--fg-dim);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+  animation: fadeUp .7s ease .2s backwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Profile Badge */
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 8px 18px 8px 8px;
+  border-radius: 100px;
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: all .3s;
+  animation: fadeUp .7s ease .3s backwards;
+}
+.profile-badge:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(94, 158, 255, 0.2);
+  transform: translateY(-2px);
+}
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+.profile-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.profile-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.2;
+}
+.profile-role {
+  font-size: 12px;
+  color: var(--fg-mute);
+  line-height: 1.2;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  animation: fadeUp .7s ease .3s backwards;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--fg-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* Search bar */
+.search-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  animation: fadeUp .7s ease .4s backwards;
+}
+.search-wrap i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg-mute);
+  font-size: 14px;
+}
+#search {
+  width: 100%;
+  padding: 16px 20px 16px 46px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--fg);
+  font-size: 15px;
+  font-family: inherit;
+  transition: all .2s;
+}
+#search::placeholder { color: var(--fg-mute); }
+#search:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(94,158,255,0.05);
+  box-shadow: 0 0 0 4px rgba(94,158,255,0.1);
+}
+
+/* Filter chips */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px auto 0;
+  max-width: 800px;
+  animation: fadeUp .7s ease .5s backwards;
+}
+.chip {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-dim);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: inherit;
+}
+.chip:hover { background: rgba(255,255,255,0.08); color: var(--fg); }
+.chip.active {
+  background: var(--grad);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(94,158,255,0.3);
+}
+
+/* Warning Banner */
+.warning-banner {
+  max-width: 800px;
+  margin: 30px auto 0;
+  padding: 16px 24px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 12px;
+  color: var(--warn-text);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  text-align: left;
+  animation: fadeUp .7s ease .6s backwards;
+}
+.warning-banner i {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Section heading */
+.section-head {
+  max-width: 1400px;
+  margin: 60px auto 30px;
+  padding: 0 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  scroll-margin-top: 100px;
+}
+.section-head h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Custom Gallery Logo - Green Glow */
+.gallery-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(52, 211, 153, 0.9)) drop-shadow(0 0 14px rgba(52, 211, 153, 0.5));
+}
+
+.section-head .result-count {
+  color: var(--fg-mute);
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Themes grid */
+.themes-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.theme-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: cardIn .6s ease backwards;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.theme-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hi);
+  box-shadow: var(--shadow);
+}
+
+.theme-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #000;
+  overflow: hidden;
+}
+.theme-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+  display: block;
+}
+.theme-card:hover .theme-preview img { transform: scale(1.06); }
+
+.theme-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(10,14,26,0.6) 100%);
+  pointer-events: none;
+}
+
+.theme-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.03em;
+  z-index: 2;
+}
+
+.theme-info {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.theme-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.theme-meta {
+  font-size: 12px;
+  color: var(--fg-mute);
+  margin-bottom: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  word-break: break-all;
+}
+.theme-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+.btn-download {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all .2s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--grad);
+  color: white;
+  box-shadow: 0 4px 12px rgba(94,158,255,0.25);
+}
+.btn-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(94,158,255,0.4);
+}
+
+/* No results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--fg-mute);
+}
+.no-results i { font-size: 48px; margin-bottom: 16px; color: var(--fg-mute); }
+.no-results h3 { font-size: 18px; color: var(--fg); margin-bottom: 8px; }
+
+/* Back to top */
+.back-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--grad);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(94,158,255,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  z-index: 50;
+}
+.back-top.visible { opacity: 1; pointer-events: auto; }
+.back-top:hover { transform: translateY(-4px); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 32px;
+  text-align: center;
+  color: var(--fg-mute);
+  font-size: 13px;
+}
+footer .links { display: flex; justify-content: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; }
+footer a { color: var(--fg-dim); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .themes-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 850px) {
+  .themes-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(10, 14, 26, 0.98);
+    padding: 16px;
+    gap: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { width: 100%; padding: 12px 14px; }
+  .nav-toggle { display: block; }
+  
+  .hero { padding: 50px 20px 30px; }
+  .stats { gap: 24px; }
+}
+@media (max-width: 540px) {
+  .themes-grid { grid-template-columns: 1fr; }
+  .nav { padding: 14px 20px; }
+  .themes-grid, .section-head { padding-left: 20px; padding-right: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-ambient">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+<div class="grid-overlay"></div>
+
+<header>
+  <nav class="nav">
+    <a href="https://github.com/CloverHackyColor/CloverBootloader/blob/master/Logo/Clover-Logo-Default-256x256@1x.png" target="_blank" class="logo">
+      <div class="anime-logo">
+        <img src="https://github.com/CloverHackyColor/CloverBootloader/blob/master/Logo/Clover-Logo-Default-256x256@1x.png?raw=true" alt="Anime Clover Logo">
+      </div>
+      <span>Clover Themes</span>
+    </a>
+    
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#gallery">Gallery</a>
+      <a href="https://github.com/CloverHackyColor/CloverThemes/tree/chris1111" target="_blank" class="nav-cta"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="badge"><span class="dot"></span> Personal Clover Theme Collection · 46 Themes</div>
+  <h1>Beautiful <span class="gradient">Clover Boot Themes</span><br>for Hackintosh</h1>
+  <p>A curated collection of meticulously crafted Clover themes featuring Apple-inspired aesthetics, minimal designs, and stunning visual flair. Choose your style and download in one click.</p>
+  
+  <a href="https://github.com/chris1111" target="_blank" class="profile-badge">
+    <img src="https://avatars.githubusercontent.com/chris1111" alt="chris1111 GitHub Avatar" class="profile-avatar">
+    <div class="profile-info">
+      <span class="profile-name">@chris1111</span>
+      <span class="profile-role">Theme Creator</span>
+    </div>
+  </a>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="themeCount">46</div><div class="stat-label">Themes</div></div>
+    <div class="stat"><div class="stat-num">4K</div><div class="stat-label">Resolution</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free</div></div>
+    <div class="stat"><div class="stat-num">Clover</div><div class="stat-label">Compatible</div></div>
+  </div>
+
+  <div class="search-wrap">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="search" placeholder="Search themes by name... e.g. Apple, Tahoe, Dark">
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip active" data-filter="all">All Themes</button>
+    <button class="chip" data-filter="Apple">Apple</button>
+    <button class="chip" data-filter="Clover">Clover</button>
+    <button class="chip" data-filter="macOS">macOS</button>
+    <button class="chip" data-filter="Tahoe">Tahoe</button>
+    <button class="chip" data-filter="Dark">Dark</button>
+    <button class="chip" data-filter="Minimal">Minimal</button>
+    <button class="chip" data-filter="Classic">Classic</button>
+  </div>
+
+  <div class="warning-banner">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span><strong>Notice:</strong> Some older themes may not work with the latest Clover revision.</span>
+  </div>
+</section>
+
+<div class="section-head" id="gallery">
+  <h2>
+    <img src="https://github.com/CloverHackyColor/CloverThemes/raw/chris1111/Glass/Logo.png" alt="Theme Gallery Logo" class="gallery-logo-img">
+    Theme Gallery
+  </h2>
+  <div class="result-count"><span id="visibleCount">46</span> themes available</div>
+</div>
+
+<main class="themes-grid" id="grid"></main>
+
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<footer>
+  <div class="links">
+    <a href="https://github.com/CloverHackyColor/CloverThemes/tree/chris1111" target="_blank">GitHub Repository</a>
+    <a href="#top">Back to top</a>
+  </div>
+  <p>Clover Themes Collection · Crafted with care for the Hackintosh community</p>
+</footer>
+
+<script>
+const themes = [
+  {name: "Tahoe", tag: "Tahoe"},
+  {name: "Apple_Clover", tag: "Apple"},
+  {name: "AppleFast", tag: "Apple"},
+  {name: "ApplePurple", tag: "Apple"},
+  {name: "AppleTech", tag: "Apple"},
+  {name: "Atomic", tag: "Abstract"},
+  {name: "christmas", tag: "Seasonal"},
+  {name: "Clover Sequoia", tag: "Clover"},
+  {name: "Clover_Forever", tag: "Clover"},
+  {name: "Clover_Warefare", tag: "Clover"},
+  {name: "Clover-MacOSX", tag: "macOS"},
+  {name: "Clover-Tahoe", tag: "Tahoe"},
+  {name: "CloverBadge", tag: "Clover"},
+  {name: "Deploy", tag: "Abstract"},
+  {name: "Eclipse", tag: "Space"},
+  {name: "Glass", tag: "Glass"},
+  {name: "gold_clover", tag: "Clover"},
+  {name: "History", tag: "Classic"},
+  {name: "iMacPro", tag: "iMac"},
+  {name: "iMacPro-2", tag: "iMac"},
+  {name: "iMacPro-Tahoe", tag: "Tahoe"},
+  {name: "Mac OS X", tag: "Classic"},
+  {name: "Mac OS X Install DVD", tag: "Classic"},
+  {name: "MacDrive", tag: "Disk"},
+  {name: "macOS", tag: "macOS"},
+  {name: "macOS12", tag: "macOS"},
+  {name: "MACOSX", tag: "macOS"},
+  {name: "MacPro", tag: "MacPro"},
+  {name: "MacProVentura", tag: "Ventura"},
+  {name: "MacSteel", tag: "Metal"},
+  {name: "MacSystem", tag: "System"},
+  {name: "OS_Sonoma", tag: "Sonoma"},
+  {name: "Pixwall", tag: "Abstract"},
+  {name: "Sharp", tag: "Minimal"},
+  {name: "Classy", tag: "Classic"},
+  {name: "Simplicity", tag: "Minimal"},
+  {name: "System", tag: "System"},
+  {name: "black", tag: "Dark"},
+  {name: "CloverLight", tag: "Light"},
+  {name: "CloverShine", tag: "Clover"},
+  {name: "CoolClover", tag: "Clover"},
+  {name: "Black-Blue", tag: "Dark"},
+  {name: "BW-Appleminimal", tag: "Minimal"},
+  {name: "OCIntegration", tag: "System"},
+  {name: "ApplePark", tag: "Apple"},
+  {name: "Tribute", tag: "Classic"}
+];
+
+// Base URLs
+const REPO_BASE = "https://github.com/CloverHackyColor/CloverThemes/raw/chris1111/";
+const REPO_TREE_BASE = "https://github.com/CloverHackyColor/CloverThemes/tree/chris1111/";
+const IMG_SUFFIX = "/screenshot.png";
+
+// Download tool URL (Forces GitHub to download the folder as a ZIP)
+const DOWNLOAD_BASE = "https://download-directory.github.io/?url=https://github.com/CloverHackyColor/CloverThemes/tree/chris1111/";
+
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('search');
+const filtersContainer = document.getElementById('filters');
+const visibleCount = document.getElementById('visibleCount');
+const themeCount = document.getElementById('themeCount');
+themeCount.textContent = themes.length;
+
+let currentFilter = 'all';
+let currentSearch = '';
+
+function getImageUrl(theme) {
+  // EncodeURIComponent handles spaces and special characters safely for URLs
+  return REPO_BASE + encodeURIComponent(theme.name) + IMG_SUFFIX;
+}
+
+function getDownloadUrl(theme) {
+  return DOWNLOAD_BASE + encodeURIComponent(theme.name);
+}
+
+function matchesFilter(theme, filter) {
+  if (filter === 'all') return true;
+  return theme.name.toLowerCase().includes(filter.toLowerCase()) ||
+         (theme.tag && theme.tag.toLowerCase().includes(filter.toLowerCase()));
+}
+
+function matchesSearch(theme, query) {
+  if (!query) return true;
+  return theme.name.toLowerCase().includes(query.toLowerCase()) ||
+         (theme.tag && theme.tag.toLowerCase().includes(query.toLowerCase()));
+}
+
+function renderGrid() {
+  const filtered = themes.filter(t =>
+    matchesFilter(t, currentFilter) && matchesSearch(t, currentSearch)
+  );
+  
+  visibleCount.textContent = filtered.length;
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <i class="fa-regular fa-face-frown"></i>
+        <h3>No themes found</h3>
+        <p>Try a different search term or filter</p>
+      </div>
+    `;
+    return;
+  }
+  
+  grid.innerHTML = filtered.map((t, i) => `
+    <article class="theme-card" style="animation-delay: ${Math.min(i * 0.02, 0.6)}s">
+      <div class="theme-preview">
+        <span class="theme-tag">${t.tag}</span>
+        <img src="${getImageUrl(t)}" alt="${t.name}" loading="lazy" 
+             onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect width=%22400%22 height=%22250%22 fill=%22%23161d2e%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%236b7693%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>${t.name}</text></svg>'">
+      </div>
+      <div class="theme-info">
+        <div class="theme-name">${t.name}</div>
+        <div class="theme-meta">Clover Theme</div>
+        <div class="theme-actions">
+          <a href="${getDownloadUrl(t)}" class="btn-download" target="_blank">
+            <i class="fa-solid fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+searchInput.addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderGrid();
+});
+
+filtersContainer.addEventListener('click', e => {
+  if (!e.target.classList.contains('chip')) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  currentFilter = e.target.dataset.filter;
+  renderGrid();
+});
+
+// Back to top
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 500);
+});
+backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Mobile nav toggle
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+renderGrid();
+</script>
+</body>
+</html>

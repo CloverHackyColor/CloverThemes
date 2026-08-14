@@ -5,21 +5,11 @@ CloverThemes
 :----
 Collection of themes for Clover Bootloader|
 
+### How to Download Theme
+- Use  ➤ [CloverThemes-Gallery](https://cloverhackycolor.github.io/CloverThemes-Gallery/)
+
 ### How to contribute and create are own Theme
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
-
-### How to Download single Theme from link
-- Download single theme ➤ [DownGit](https://chris1111.github.io/DownGit/#/home)
-
-### How to Download single Theme from Command Line
-- Make sure you have Git Installed 
-- Use the command bellow to install github-files-fetcher
-#### Command github-files-fetcher
-```bash
-sudo npm install -g github-files-fetcher
-```
-- Download Fletch-Clover-Themes ➤ [Fletch-Clover-Themes](https://github.com/CloverHackyColor/CloverThemes/raw/master/Fletch-Clover-Themes.zip) And follow the video at the bottom of the topic
-
 
 ## Some examples of themes ⬇︎
 

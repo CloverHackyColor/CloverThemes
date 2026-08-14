@@ -9,7 +9,7 @@ Collection of themes for Clover Bootloader|
 - View ➤ [CloverThemes](https://www.insanelymac.com/forum/topic/288685-clover-themes/)
 
 ### Download Themes
-- Download themes ➤ [CloverThemes](https://htmlpreview.github.io/?https://github.com/CloverHackyColor/CloverThemes/blob/chris1111/index.html)
+- Download themes ➤ [CloverThemes](https://chris1111.github.io/OpenCore-Clover-Themes/)
 
 ## Some examples of themes ⬇︎
 

@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clover Themes Gallery</title>
+<!-- JSZip Library for local zip creation -->
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -563,9 +565,14 @@ header {
   color: white;
   box-shadow: 0 4px 12px rgba(94,158,255,0.25);
 }
-.btn-download:hover {
+.btn-download:hover:not(:disabled) {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(94,158,255,0.4);
+}
+.btn-download:disabled {
+  cursor: wait;
+  opacity: 0.8;
+  transform: none;
 }
 
 /* No results */
@@ -789,12 +796,14 @@ const themes = [
 ];
 
 // Base URLs
-const REPO_BASE = "https://github.com/CloverHackyColor/CloverThemes/raw/chris1111/";
-const REPO_TREE_BASE = "https://github.com/CloverHackyColor/CloverThemes/tree/chris1111/";
+const REPO_OWNER = "CloverHackyColor";
+const REPO_NAME = "CloverThemes";
+const BRANCH_NAME = "chris1111";
+const REPO_BASE = `https://github.com/${REPO_OWNER}/${REPO_NAME}/raw/${BRANCH_NAME}/`;
 const IMG_SUFFIX = "/screenshot.png";
 
-// Download tool URL (Forces GitHub to download the folder as a ZIP)
-const DOWNLOAD_BASE = "https://download-directory.github.io/?url=https://github.com/CloverHackyColor/CloverThemes/tree/chris1111/";
+// Store all file lists for each theme so we can zip them locally later
+const themeFilesMap = {};
 
 const grid = document.getElementById('grid');
 const searchInput = document.getElementById('search');
@@ -809,10 +818,6 @@ let currentSearch = '';
 function getImageUrl(theme) {
   // EncodeURIComponent handles spaces and special characters safely for URLs
   return REPO_BASE + encodeURIComponent(theme.name) + IMG_SUFFIX;
-}
-
-function getDownloadUrl(theme) {
-  return DOWNLOAD_BASE + encodeURIComponent(theme.name);
 }
 
 function matchesFilter(theme, filter) {
@@ -845,6 +850,7 @@ function renderGrid() {
     return;
   }
   
+  // Changed <a> to <button> to better handle JS download states
   grid.innerHTML = filtered.map((t, i) => `
     <article class="theme-card" style="animation-delay: ${Math.min(i * 0.02, 0.6)}s">
       <div class="theme-preview">
@@ -856,14 +862,98 @@ function renderGrid() {
         <div class="theme-name">${t.name}</div>
         <div class="theme-meta">Clover Theme</div>
         <div class="theme-actions">
-          <a href="${getDownloadUrl(t)}" class="btn-download" target="_blank">
+          <button class="btn-download" data-folder="${t.name}">
             <i class="fa-solid fa-download"></i> Download
-          </a>
+          </button>
         </div>
       </div>
     </article>
   `).join('');
 }
+
+// ==========================================
+// GITHUB API & LOCAL ZIP GENERATION (JSZip)
+// ==========================================
+async function downloadThemeZip(folderName, btn) {
+  const originalHTML = btn.innerHTML;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
+  btn.disabled = true;
+
+  try {
+    // 1. Fetch file list from GitHub API if we haven't already
+    if (!themeFilesMap[folderName]) {
+      const treeUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${BRANCH_NAME}?recursive=1`;
+      const response = await fetch(treeUrl);
+      
+      if (response.status === 403) throw new Error("GitHub API rate limit exceeded. Please try again later.");
+      if (!response.ok) throw new Error(`GitHub API Error: ${response.status}`);
+      
+      const data = await response.json();
+      
+      // Populate the map for all themes to save API calls later
+      data.tree.forEach(item => {
+        const parts = item.path.split('/');
+        if (parts.length > 1 && item.type === 'blob') {
+          const tName = parts[0];
+          if (!themeFilesMap[tName]) themeFilesMap[tName] = [];
+          themeFilesMap[tName].push(item);
+        }
+      });
+    }
+
+    const files = themeFilesMap[folderName];
+    if (!files || files.length === 0) throw new Error("No files found for this theme.");
+
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Zipping...';
+
+    // 2. Fetch all files and add to JSZip
+    const zip = new JSZip();
+    const themeFolder = zip.folder(folderName);
+
+    const fetchPromises = files.map(file => {
+      const fileUrl = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH_NAME}/${file.path}`;
+      return fetch(fileUrl)
+        .then(res => {
+          if (!res.ok) throw new Error(`Failed to fetch ${file.path}`);
+          return res.blob();
+        })
+        .then(blob => {
+          // Remove the "ThemeName/" part from the path for the inside of the zip
+          const relativePath = file.path.substring(folderName.length + 1);
+          themeFolder.file(relativePath, blob);
+        });
+    });
+
+    await Promise.all(fetchPromises);
+
+    // 3. Generate and download the zip
+    const content = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(content);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${folderName}.zip`; // Forces the EXACT filename, e.g., "Atomic.zip"
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+  } catch (error) {
+    console.error("Download error:", error);
+    alert(`Failed to download ${folderName}. ${error.message}`);
+  } finally {
+    btn.innerHTML = originalHTML;
+    btn.disabled = false;
+  }
+}
+
+// Event listener for all download buttons
+grid.addEventListener('click', function(e) {
+  const btn = e.target.closest('.btn-download');
+  if (btn && !btn.disabled) {
+    const folderName = btn.getAttribute('data-folder');
+    downloadThemeZip(folderName, btn);
+  }
+});
 
 searchInput.addEventListener('input', e => {
   currentSearch = e.target.value;
